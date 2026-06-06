@@ -1,6 +1,10 @@
-# 01 · Esqueleto — ion-header + ion-content
+# 01 · Esqueleto — ion-header + ion-content + ion-footer
 
-El esqueleto de toda página: barra fija arriba (`ion-header`) y cuerpo que scrollea (`ion-content`).
+El esqueleto de toda página, con sus tres partes:
+
+1. **Header** — barra fija arriba (`ion-header`), con botones en los slots `start`/`end` del `ion-toolbar` (`ion-buttons`).
+2. **Content** — el cuerpo que scrollea (`ion-content [fullscreen]="true"`); hay texto de sobra para ver el scroll mientras header y footer quedan fijos.
+3. **Footer** — barra fija abajo (`ion-footer`).
 
 **Archivo clave:** `src/app/home/home.page.html`
 

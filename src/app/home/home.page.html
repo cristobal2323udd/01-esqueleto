@@ -1,10 +1,52 @@
+<!-- HEADER: barra fija arriba. Los ion-buttons van en los slots start/end del toolbar. -->
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>Mi App</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<!-- CONTENT: el cuerpo que scrollea. fullscreen deja que el contenido pase
+     bajo el header translúcido. Hay texto de sobra para ver el scroll. -->
+<ion-content [fullscreen]="true" class="ion-padding">
   <h2>Hola 👋</h2>
-  <p>Todo lo que se desplaza va aquí dentro.</p>
+  <p>Todo lo que se desplaza va aquí dentro. Desliza hacia abajo para ver cómo
+    el <strong>ion-content</strong> scrollea mientras el header y el footer quedan fijos.</p>
+
+  <p>El esqueleto de toda página Ionic tiene tres partes: <strong>ion-header</strong>
+    arriba, <strong>ion-content</strong> al medio y, opcionalmente,
+    <strong>ion-footer</strong> abajo.</p>
+
+  <p>El header y el footer no se mueven: son barras fijas. Solo el contenido
+    central se desplaza, igual que en cualquier app del teléfono.</p>
+
+  <p>Párrafo de relleno 1 — sigue bajando…</p>
+  <p>Párrafo de relleno 2 — sigue bajando…</p>
+  <p>Párrafo de relleno 3 — sigue bajando…</p>
+  <p>Párrafo de relleno 4 — sigue bajando…</p>
+  <p>Párrafo de relleno 5 — sigue bajando…</p>
+  <p>Párrafo de relleno 6 — sigue bajando…</p>
+  <p>Párrafo de relleno 7 — sigue bajando…</p>
+  <p>Párrafo de relleno 8 — sigue bajando…</p>
+
+  <p>🎉 Llegaste al final. Fíjate que el header de arriba y el footer de abajo
+    nunca se movieron.</p>
 </ion-content>
+
+<!-- FOOTER: barra fija abajo. Mismo ion-toolbar que el header, pero al pie. -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small">Pie de página · IIP323W</ion-title>
+  </ion-toolbar>
+</ion-footer>
