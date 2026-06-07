@@ -15,12 +15,30 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
+  <!-- Segundo toolbar: un ion-segment de filtro. [(ngModel)] guarda la opción
+       elegida en la propiedad `filtro` del componente. -->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="filtro">
+      <ion-segment-button value="todos">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favoritos">
+        <ion-label>Favoritos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <!-- CONTENT: el cuerpo que scrollea. fullscreen deja que el contenido pase
      bajo el header translúcido. Hay texto de sobra para ver el scroll. -->
 <ion-content [fullscreen]="true" class="ion-padding">
   <h2>Hola 👋</h2>
+
+  <!-- {{ filtro }} muestra en vivo la opción elegida en el ion-segment: así
+       sabemos en qué filtro estamos (enlace de dos vías con [(ngModel)]). -->
+  <p>Mostrando: {{ filtro }}</p>
+
   <p>Todo lo que se desplaza va aquí dentro. Desliza hacia abajo para ver cómo
     el <strong>ion-content</strong> scrollea mientras el header y el footer quedan fijos.</p>
 
