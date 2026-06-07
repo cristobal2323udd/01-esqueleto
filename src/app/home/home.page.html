@@ -39,6 +39,19 @@
        sabemos en qué filtro estamos (enlace de dos vías con [(ngModel)]). -->
   <p>Mostrando: {{ filtro }}</p>
 
+  <!-- Así se ocupa el filtro: la lista cambia según la pestaña elegida.
+       Con "Favoritos" se ven solo los favoritos (★); con "Todos", la lista completa. -->
+  <ion-list>
+    @for (item of itemsFiltrados; track item.nombre) {
+      <ion-item>
+        <ion-label>{{ item.nombre }}</ion-label>
+        @if (item.favorito) {
+          <ion-icon name="star" slot="end" color="warning"></ion-icon>
+        }
+      </ion-item>
+    }
+  </ion-list>
+
   <p>Todo lo que se desplaza va aquí dentro. Desliza hacia abajo para ver cómo
     el <strong>ion-content</strong> scrollea mientras el header y el footer quedan fijos.</p>
 
