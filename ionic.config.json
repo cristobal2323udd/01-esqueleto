@@ -1,0 +1,7 @@
+{
+  "name": "clase2-01-esqueleto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

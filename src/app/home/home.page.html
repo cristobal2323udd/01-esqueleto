@@ -1,0 +1,41 @@
+<!-- HEADER: barra fija arriba. Nada de lo que va aquí se mueve al hacer scroll. -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi App</ion-title>
+  </ion-toolbar>
+
+  <!-- Un segundo ion-toolbar con un ion-segment para filtrar. [(ngModel)]
+       escribe la opción elegida en el signal `filtro` (llama a filtro.set). -->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="filtro">
+      <ion-segment-button value="todos">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favoritos">
+        <ion-label>Favoritos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<!-- CONTENT: el cuerpo de la página. La lista no sale de items, sale de
+     itemsFiltrados(), que se recalcula solo cuando cambia el filtro. -->
+<ion-content class="ion-padding">
+  <ion-list>
+    @for (item of itemsFiltrados(); track item.nombre) {
+      <ion-item>
+        <ion-label>{{ item.nombre }}</ion-label>
+        @if (item.favorito) {
+          <ion-note slot="end">★</ion-note>
+        }
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>
+
+<!-- FOOTER: la barra fija de abajo. Mismo ion-toolbar que el header, al pie. -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small">Pie de página · IIP323W</ion-title>
+  </ion-toolbar>
+</ion-footer>
